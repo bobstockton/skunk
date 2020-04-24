@@ -122,7 +122,7 @@ class MenusTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    { 
+    {
         /* Get roles */
         $this->adminRole = Role::where('name' , '=' , 'admin' )->first();
         $this->userRole = Role::where('name', '=', 'user' )->first();
@@ -144,6 +144,8 @@ class MenusTableSeeder extends Seeder
         $this->endDropdown();
         $this->insertLink('guest', 'Login', '/login', 'cil-account-logout');
         $this->insertLink('guest', 'Register', '/register', 'cil-account-logout');
+        $this->insertLink('user,admin', 'Customers', '/customers', 'cil-people');
+        $this->insertLink('user,admin', 'Orders', '/orders', 'cil-cart');
         $this->insertTitle('user,admin', 'Theme');
         $this->insertLink('user,admin', 'Colors', '/colors', 'cil-drop1');
         $this->insertLink('user,admin', 'Typography', '/typography', 'cil-pencil');
@@ -190,8 +192,6 @@ class MenusTableSeeder extends Seeder
             $this->insertLink('user,admin', 'Error 404',     '/404');
             $this->insertLink('user,admin', 'Error 500',     '/500');
         $this->endDropdown();
-        $this->insertLink('guest,user,admin', 'Download CoreUI', 'https://coreui.io', 'cil-cloud-download');
-        $this->insertLink('guest,user,admin', 'Try CoreUI PRO', 'https://coreui.io/pro/', 'cil-layers');
 
 
         /* Create top menu */
