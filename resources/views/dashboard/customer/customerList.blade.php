@@ -30,10 +30,10 @@
                               <td>{{ $customer->surname }}</td>
                               <td>{{ $customer->organisation }}</td>
                               <td>
-                                <a href="{{ url('/customers/' . $customer->id) }}" class="btn btn-block btn-primary">View</a>
+                                <a href="{{ url('/customer/' . $customer->id) }}" class="btn btn-block btn-primary">View</a>
                               </td>
                               <td>
-                                <a href="{{ url('/customers/' . $customer->id . '/edit') }}" class="btn btn-block btn-primary">Edit</a>
+                                <a href="{{ url('/customer/' . $customer->id . '/edit') }}" class="btn btn-block btn-primary">Edit</a>
                               </td>
                             </tr>
                           @endforeach
